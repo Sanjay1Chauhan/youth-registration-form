@@ -51,6 +51,11 @@ form {
   gap: 20px;
 }
 
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+	filter: invert(1);  
+	cursor: pointer;
+  }
 /* Header style for form title */
 h2 {
   font-size: 2rem;
