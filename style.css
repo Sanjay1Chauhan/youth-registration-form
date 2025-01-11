@@ -20,7 +20,7 @@ body {
   background-color: #001660;
 }
 
-/* Background overlay for body */
+/* Background overlay */
 body::before {
   content: "";
   position: absolute;
@@ -39,28 +39,18 @@ body::before {
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Form layout as a grid for larger screens */
+/* Form layout */
 form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
-
-input[type="date"]::-webkit-datetime-edit {
-	color: #fff;  /* Change this to any color you want */
-  }
-
-  /* input[type="date"]::-webkit-calendar-picker-indicator {
-	filter: invert(1);  
-	cursor: pointer;
-  } */
-/* Header style for form title */
+/* Header style */
 h2 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -68,14 +58,14 @@ h2 {
   grid-column: span 2;
 }
 
-/* Style for input field container */
+/* Input field container */
 .input-field {
   position: relative;
   border-bottom: 2px solid #ccc;
   margin: 20px 0;
 }
 
-/* Label styling, with animation for floating effect */
+/* Label styling */
 .input-field label {
   position: absolute;
   top: 50%;
@@ -87,7 +77,7 @@ h2 {
   transition: 0.3s ease;
 }
 
-/* Input styling for text and date fields */
+/* Input fields */
 .input-field input {
   width: 100%;
   height: 45px;
@@ -99,15 +89,20 @@ h2 {
   padding: 0 5px;
 }
 
-/* Label animation when input is active or filled */
-.input-field input:focus ~ label,
-.input-field input:valid ~ label {
+/* Focus animation for all fields except Date of Birth */
+.input-field input:not([type="date"]):focus ~ label,
+.input-field input:not([type="date"]):valid ~ label {
   font-size: 0.9rem;
   top: -10px;
   color: #00e6e6;
 }
 
-/* Gender selection style */
+/* Date input styling */
+input[type="date"]::-webkit-datetime-edit {
+  color: #fff;
+}
+
+/* Gender selection */
 .gender-selection {
   display: flex;
   align-items: center;
@@ -130,7 +125,7 @@ h2 {
   height: 18px;
 }
 
-/* Button container for two-column layout */
+/* Button styling */
 .buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -138,7 +133,6 @@ h2 {
   grid-column: span 2;
 }
 
-/* Submit Button Styling */
 button[type="submit"] {
   background-color: green;
   color: white;
@@ -154,7 +148,6 @@ button[type="submit"]:hover {
   background-color: darkgreen;
 }
 
-/* Reset Button Styling */
 button[type="reset"] {
   background-color: red;
   color: white;
@@ -170,7 +163,7 @@ button[type="reset"]:hover {
   background-color: darkred;
 }
 
-/* Responsive Layout: Single column for small screens */
+/* Responsive design */
 @media (max-width: 576px) {
   .wrapper {
     width: 100%;
@@ -186,13 +179,11 @@ button[type="reset"]:hover {
     grid-column: span 1 !important;
   }
 
-  /* Buttons stack vertically on small screens */
   .buttons {
     grid-template-columns: 1fr;
   }
 }
 
-  
 /* *
 {
 	margin: 0;
