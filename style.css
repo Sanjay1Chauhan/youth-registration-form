@@ -52,10 +52,14 @@ form {
 }
 
 
-  input[type="date"]::-webkit-calendar-picker-indicator {
+input[type="date"]::-webkit-datetime-edit {
+	color: #fff;  /* Change this to any color you want */
+  }
+
+  /* input[type="date"]::-webkit-calendar-picker-indicator {
 	filter: invert(1);  
 	cursor: pointer;
-  }
+  } */
 /* Header style for form title */
 h2 {
   font-size: 2rem;
