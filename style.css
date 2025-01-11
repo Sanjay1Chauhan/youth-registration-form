@@ -20,6 +20,10 @@ body {
   background-color: #001660;
 }
 
+#dob label {
+	top: -8px;
+  }
+
 /* Background overlay */
 body::before {
   content: "";
