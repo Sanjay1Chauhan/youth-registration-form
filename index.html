@@ -1,4 +1,70 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youth Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <form autocomplete="off" method="post" name="google-sheet">
+      <h2>Youth Registration Form</h2>
+
+      <div class="input-field">
+        <input type="text" name="Name" required>
+        <label>Enter Your Name</label>
+      </div>
+
+      <div class="input-field">
+        <input type="text"  name="FatherName" required>
+        <label>Enter Your Father's Name</label>
+      </div>
+
+      <div class="input-field">
+        <input type="text"  name="Mobile" required>
+        <label>Enter Your Phone Number</label>
+      </div>
+
+      <div class="input-field">
+        <input type="date" name="dob" required>
+        <!-- <label>Date of Birth</label> -->
+      </div>
+
+      <div class="gender-selection">
+        <label><b>Gender</b></label><br>
+        <input type="radio" name="gender" value="Male" required> Male
+        <input type="radio" name="gender" value="Female"> Female
+      </div>
+
+	  <div class="buttons">
+      <button type="submit" name="submit">Submit</button>
+      <button type="reset">Reset</button>
+	</div>
+    </form>
+  </div>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxqETZ_gR4tYcugB3L3RmgJLl8MArJmVW7gmeuEs3lADqJzephg92w4iqpV_7C2KZ_0/exec';
+    const form = document.forms['google-sheet'];
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => alert("Your record has been successfully submitted."))
+        .catch(error => console.error('Error!', error.message));
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -43,4 +109,4 @@
           </script>
     
 </body>
-</html>
+</html> -->

@@ -1,4 +1,190 @@
-*
+/* Import Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;300;400;500;600;700&display=swap");
+
+/* Reset styles and set default font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* Body styles for centering content and background setup */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 10px;
+  background-color: #001660;
+}
+
+/* Background overlay for body */
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("https://images.unsplash.com/photo-1458869612855-bb6009d50368?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center/cover;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* Glassmorphism style for form wrapper */
+.wrapper {
+  width: 800px;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Form layout as a grid for larger screens */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Header style for form title */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+  grid-column: span 2;
+}
+
+/* Style for input field container */
+.input-field {
+  position: relative;
+  border-bottom: 2px solid #ccc;
+  margin: 20px 0;
+}
+
+/* Label styling, with animation for floating effect */
+.input-field label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+/* Input styling for text and date fields */
+.input-field input {
+  width: 100%;
+  height: 45px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  padding: 0 5px;
+}
+
+/* Label animation when input is active or filled */
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+  font-size: 0.9rem;
+  top: -10px;
+  color: #00e6e6;
+}
+
+/* Gender selection style */
+.gender-selection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  color: #fff;
+  grid-column: span 2;
+}
+
+.gender-selection label {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gender-selection input[type="radio"] {
+  accent-color: #00e6e6;
+  width: 18px;
+  height: 18px;
+}
+
+/* Button container for two-column layout */
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  grid-column: span 2;
+}
+
+/* Submit Button Styling */
+button[type="submit"] {
+  background-color: green;
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: darkgreen;
+}
+
+/* Reset Button Styling */
+button[type="reset"] {
+  background-color: red;
+  color: white;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="reset"]:hover {
+  background-color: darkred;
+}
+
+/* Responsive Layout: Single column for small screens */
+@media (max-width: 576px) {
+  .wrapper {
+    width: 100%;
+    padding: 20px;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  h2, .gender-selection, .input-field, .buttons {
+    grid-column: span 1 !important;
+  }
+
+  /* Buttons stack vertically on small screens */
+  .buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+  
+/* *
 {
 	margin: 0;
 	padding: 0;
@@ -60,4 +246,4 @@ form .reset
 {
 
 	background: red;
-}
+} */
